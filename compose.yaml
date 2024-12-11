@@ -1,0 +1,23 @@
+version: '3'
+services:
+  wordpress:
+    build: .
+    ports:
+      - "80:80"
+    links:
+      - db
+    restart: always
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      DEBUG: "true"
+      MYSQL_ROOT_PASSWORD: your_root_password
+      MYSQL_DATABASE: your_db_name
+      MYSQL_USER: your_db_user
+      MYSQL_PASSWORD: your_db_password
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
