@@ -1,0 +1,5 @@
+FROM wordpress:latest
+ENV WORDPRESS_DB_HOST=wp_docker_test_db
+ENV WORDPRESS_DB_USER=wp_docker_test_admin
+ENV WORDPRESS_DB_PASSWORD=wp_docker_test_admin
+ENV WORDPRESS_DB_NAME=wp_docker_test_db
